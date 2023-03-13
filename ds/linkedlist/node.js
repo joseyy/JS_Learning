@@ -10,7 +10,7 @@ class NodeLL {
   }
 
   toString(callback) {
-    return callback ? callback(this.value) : "${this.value}";
+    return callback ? callback(this.value) : `${this.value}`;
   }
 }
 
