@@ -1,5 +1,4 @@
 const { LinkedList } = require('../linkedlist/linkedList');
-const linkedList = require('../linkedlist/linkedList');
 
 class Queue {
   /**
@@ -38,10 +37,14 @@ class Queue {
   }
 
   /**
-   * 
+   *
    * @returns First Value
    */
   peak() {
     return this.isEmpty() ? null : this.ll.head.value;
   }
 }
+
+module.exports = {
+  Queue: Queue,
+};

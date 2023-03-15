@@ -207,13 +207,30 @@ class LinkedList {
     }
     return nodes;
   }
+
+  find({ value = undefined, callback = undefined }) {
+    let current = this.head;
+
+    if (!this.head) {
+      return null;
+    }
+
+    while (current) {
+      if (callback && callback(current.value)) {
+        return current;
+      }
+
+      if (value !== undefined && current.value === value) {
+        return current;
+      }
+
+      current = current.next;
+    }
+
+    return null;
+  }
 }
 
 module.exports = {
   LinkedList: LinkedList,
 };
-
-const ll = new LinkedList();
-
-ll.fromArray([1, 2, 3, 4]);
-console.log(ll.toString());
